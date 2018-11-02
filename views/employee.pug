@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    h1 The number of the people is #{employees.length}
+    each employee in employees
+      p #{employee.name}
