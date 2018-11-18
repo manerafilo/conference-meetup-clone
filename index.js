@@ -22,7 +22,7 @@ const employees = [employee1, employee2]
 
 async function saveAndRead() {
     await dbConference.save(conferences)
-    await dbEmployee.save(employees)
+    await dbEmployee.saveAll(employees)
     
     const data =  await Database.load('./Employee.json')
     data.employees.map(Employee.create)
