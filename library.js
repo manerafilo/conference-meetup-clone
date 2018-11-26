@@ -1,0 +1,1 @@
+exports.sum=(val1,val2)=>(val1*100+val2*100/100)

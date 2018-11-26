@@ -3,14 +3,29 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose --watch"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "ava": "^0.25.0",
     "express": "^4.16.4",
     "mongoose": "^5.3.10",
-    "pug": "^2.0.3"
-  }
+    "nyc": "^13.1.0",
+    "pug": "^2.0.3",
+    "supertest": "^3.3.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manerafilo/conference-meetup-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manerafilo/conference-meetup-clone/issues"
+  },
+  "homepage": "https://github.com/manerafilo/conference-meetup-clone#readme",
+  "description": ""
 }

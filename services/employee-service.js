@@ -5,29 +5,11 @@ const EmployeeModel = require('../models/employee')
 const dbPath = `${__dirname}/../Employee.json`
 
 async function findAll() {
-    return new Promise((resolve, reject) => {
-        fs.readFile(dbPath, 'utf8', (err, file) => {
-            if (err) return reject(err)
-
-            const people = JSON.parse(file).map(EmployeeModel.create)
-
-            resolve(people)
-        })
-    })
+    return EmployeeModel.find()
 }
 
-async function add(person) {
-    const allPeople = await findAll()
-    const lastPerson = allPeople[allPeople.length - 1]
-    const lastPersonsId = lastPerson && lastPerson.id || 0
-    person.id = lastPersonsId + 1
-
-    person = EmployeeModel.create(person)
-    allPeople.push(person)
-
-    await saveAll(allPeople)
-
-    return person
+async function add(employee) {
+    return EmployeeModel.create(employee)
 }
 
 async function del(personId) {

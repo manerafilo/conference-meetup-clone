@@ -4,6 +4,15 @@ const express = require('express')
 const EmployeeService= require('./services/employee-service')
 const bodyParser = require('body-parser')
 const app = express()
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost/conference-meetup-clone', { useNewUrlParser: true })
+    .then(() => {
+        console.log('Mongoose connected')
+    })
+    .catch(err => {
+        console.log(err)
+    })
 
 app.use(bodyParser.json())
 
